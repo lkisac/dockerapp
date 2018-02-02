@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 default_key = '1'
-cache = {default_key: 'one'}
+cache = {default_key: 'one'} 
 
 @app.route('/', methods=['GET', 'POST'])
 def mainpage():
@@ -15,6 +15,7 @@ def mainpage():
 		cache[key] = request.form['cache_value']
 
 	cache_value = None;
+        # key value lookup
 	if key in cache:
 		cache_value = cache[key]
 
