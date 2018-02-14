@@ -1,12 +1,12 @@
-version: 2
+version: 2 # Circle CI version 2
 jobs:
   build:
     working_directory: /dockerapp
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: docker:17.05.0-ce-git # docker-in docker "container inside a container".  git is pre-installed here
     steps:
-      - checkout
-      - setup_remote_docker
+      - checkout # checkout source code to working directory
+      - setup_remote_docker # creates separate environment for each build for security.  remote, isolated.
       - run:
           name: Install dependencies
           command: |
