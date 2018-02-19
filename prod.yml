@@ -1,0 +1,12 @@
+version: "3.0"
+services:
+  dockerapp:
+    image: lkisac/dockerapp
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    deploy:
+      replicas: 2
+  redis:
+    image: redis:3.2.0
